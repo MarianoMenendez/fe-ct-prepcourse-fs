@@ -124,6 +124,13 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   count = 0
+   for (i=0; i < array.length; i++){
+      if(array[i]>18){ 
+         count = count + 1;
+      }
+   }
+   return count;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -131,18 +138,33 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   esFinDeSemana = [1,7]
+   if (esFinDeSemana.includes(numeroDeDia)){
+      return "Es fin de semana";
+   }
+   return "Es dia laboral";
+   
+
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar True si el entero inicia con 9 y False en otro caso.
    // Tu código:
+   Numtostring=num.toString()
+   array= Numtostring.split("");
+   if(array[0]==9){
+      return true;
+   }
+   return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar True.
    // Caso contrario retornar False.
    // Tu código:
+  return array.every(x => x == array[0]);
+
 }
 
 function mesesDelAño(array) {
@@ -150,18 +172,43 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var arraymes = []
+   if(array.includes("Enero") && array.includes("Marzo") && array.includes("Noviembre")){
+      for(i=0 ; i < array.length ; i++){ 
+         if(array[i] == ("Enero") || array[i] == ("Marzo") || array[i] == ("Noviembre")) {
+              arraymes.push(array[i])
+         }
+      }
+         return arraymes;
+  } 
+   else {return "No se encontraron los meses pedidos"}
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tablaSeis = [0];
+   i = 1
+   while(i<11){
+      tablaSeis.push(i*6);
+      console.log(tablaSeis)
+      i++;
+   }
+   return tablaSeis
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var arrayMayorCien = []
+   for (i=0; i < array.length ; i++){
+   if(array[i]>100){
+      arrayMayorCien.push(array[i])
+      }
+   }
+   return arrayMayorCien
 }
 
 /* ----------------------------------------------------------------------------------
@@ -175,6 +222,17 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   arrayBreak = [];
+   for (i=0 ; i < 10; i++){
+      if((num +2) == i){
+         return "Se interrumpió la ejecución";
+         break;
+      }  else {
+         arrayBreak.push(num += 2);
+         console.log(arrayBreak);
+      }
+   }
+   return arrayBreak
 }
 
 function continueStatement(num) {
@@ -184,6 +242,17 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var arrayAumentado = [];
+   for (i=0; i < 10; i++){
+   if (i == 4){
+      continue;
+   } else
+      {
+      arrayAumentado.push(num += 2);
+      }
+
+}
+return arrayAumentado;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
